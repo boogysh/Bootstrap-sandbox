@@ -1,0 +1,23 @@
+$customBeige: beige;
+$customWhite: #f1f1f1;
+$customGreen: lightgreen;
+
+
+
+$custom-theme-colors: (
+    "beige": $customBeige,
+    "greyWhite": $customWhite,
+    "green": $customGreen
+);
+
+$theme-colors: map.merge($custom-theme-colors, $theme-colors);
+
+@each $key, $val in $custom-theme-colors {
+    .bg-#{$key}{
+        background-color: $val;
+    }
+    // fixed 
+    .text-#{$key}{
+        color: $val;
+    }
+}

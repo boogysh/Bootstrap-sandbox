@@ -1,0 +1,67 @@
+npm init
+npm i bootstrap
+npm i -g sass
+in scss folder:
+    new file global.scss
+
+    in global.scss:
+        @import "../node_modules/bootstrap/scss/functions";
+        @import "../node_modules/bootstrap/scss/variables";
+        @import "../node_modules/bootstrap/scss/maps";
+        @import "../node_modules/bootstrap/scss/utilities";
+
+
+        @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+in terminal ../Personnalisation:
+    sass scss/global.scss  styles/raw/style.css 
+
+in package.json:
+    "scripts": {
+        "sass": "sass scss/global.scss  styles/raw/style.css --watch"
+    },
+npm run sass
+
+create:
+_components.scss
+_custom.scss
+_globalVar.scss
+_pallete.scss
+_utilities.scss
+
+import all in global.scss
+
+    @use "sass:map";
+
+    @import "./globalVar";
+
+    @import "../node_modules/bootstrap/scss/functions";
+    @import "../node_modules/bootstrap/scss/variables";
+    @import "../node_modules/bootstrap/scss/maps";
+    @import "../node_modules/bootstrap/scss/utilities";
+
+    @import "./palette";
+    @import "./utilities";
+    @import "./components";
+
+    @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+    @import "./customCSS";
+
+npm i -g purgecss
+
+in package.json, in scripts add:
+    "scripts": {
+        "purge":"purgecss -css styles/raw/style.css --content index.html -o styles/cleaned/style.css"
+    },
+
+in index.html:
+    delete  <link rel="stylesheet" href="styles/raw/style.css">
+    add     <link rel="stylesheet" href="styles/cleaned/style.css">
+
+
+
+
+
+
+    

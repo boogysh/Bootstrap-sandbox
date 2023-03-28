@@ -1,0 +1,23 @@
+$utilities: (
+    "cursor":(
+        property: cursor,
+        values: auto pointer grab,
+    ),
+    "width":(
+        property: width,
+        class: w,
+        values:(
+            400: 400px
+        )
+    ),
+    "padding":(
+        property: padding,
+        responsive: true,
+        class: p,
+        values:(
+            2px: 2px,
+            3px: 3px,
+            4px: 4px
+        )
+    )
+);
